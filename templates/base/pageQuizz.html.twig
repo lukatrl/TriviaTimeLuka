@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block title %}Quizz {{quiz.titre}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+
+{% endblock %}
+
+
+{% block
+body %}
+<div id="quizz" data-idQuizz="{{quiz.id}}">
+
+	<h1 id="title-quizz" class="text-white">{{ questions.contenu }}</h1>
+	<img style="widht: 100%; height:200px;" src="{{asset('imageQuestion/' ~ questions.fileName) }}" alt="L'image n'a pas charger"></img>
+	{# <p id="question" class="text-white">{{questions.contenu}} ?</p> #}
+
+	<form action="" method="post">
+
+
+ 		<div class="form-group">
+			<button type="button" class="btn btn-dark w-25 m-2">A</button>
+
+			<button type="button" class="btn btn-dark w-25 m-2">B</button>
+
+
+		</div>
+		<div class="form-group">
+			<button type="button" class="btn btn-dark w-25 m-2">C</button>
+
+			<button type="button" class="btn btn-dark w-25 m-2">D</button>
+
+
+		</div> 
+		<button type="button" class="btn btn-success w-25 m-2">Valider</button>
+	</form>
+
+	<p class="text-white mt-2">Question 1/4</p>
+
+</div>
+	<style>
+  
+    body {
+      text-align: center;
+  }
+
+  .form-group {
+      display: flex;
+      justify-content: center;
+  }
+
+  .form-group label {
+      margin: 0 10px;
+  }
+  </style>
+  
+  {% block javascripts %}
+  {{parent()}}
+  <script type="module" src="{{asset("script/script.js")}}"></script>
+   {% endblock %} 
+  
+{% endblock %}

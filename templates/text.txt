@@ -1,0 +1,25 @@
+{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+					<li class="nav-item"></li>
+
+					<a class="nav-link text-white rounded" href="{{path('app_login')}}">Se connecter
+
+					</a>
+				</li>
+				<li class="nav-item"></li>
+
+				<a class="nav-link text-white rounded" href="{{path('app_register')}}">S'inscrire
+
+
+				</a>
+			</li>
+		{% else %}
+			<li class="nav-item"></li>
+			<a href="" class="nav-link text-white rounded" href="">Mon Profile</a>
+		</liclass="nav-item">
+		<li class="">
+			<a class="nav-link link-white rounded text-danger" href="{{path('app_logout')}}">
+
+
+				Deconnexion</a>
+		</li>
+	{% endif %}
